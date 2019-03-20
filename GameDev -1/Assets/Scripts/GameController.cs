@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public GameObject GameOverText;
     public bool gameOver = false;
     public float scrollSpeed = -500f;
+    public Animator anim;
 
     // Use this for intialization
     void Awake()
@@ -36,5 +37,6 @@ public class GameController : MonoBehaviour
     {
         GameOverText.SetActive(true);
         gameOver = true;
+        anim.SetTrigger("player_hurt");
     }
 }

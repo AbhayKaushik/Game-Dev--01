@@ -9,7 +9,7 @@ public class heroRun : MonoBehaviour
 
     private bool isDead = false;
     private Rigidbody2D rb2d;
-    private Animator anim;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
