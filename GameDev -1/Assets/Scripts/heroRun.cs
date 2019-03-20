@@ -5,6 +5,7 @@ using UnityEngine;
 public class heroRun : MonoBehaviour
 {
     public float upForce = 200f;
+    public float runForce = 5f;
 
     private bool isDead = false;
     private Rigidbody2D rb2d;
@@ -30,5 +31,8 @@ public class heroRun : MonoBehaviour
             }
 
         }
+
+        rb2d.AddForce(new Vector2(runForce, 0));
+        anim.SetTrigger("player_run");
     }
 }
