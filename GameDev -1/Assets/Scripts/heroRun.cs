@@ -37,12 +37,16 @@ public class heroRun : MonoBehaviour
 
         //rb2d.AddForce(new Vector2(runForce, 0));
         anim.SetTrigger("player_run");
+
+        if (GameController.instance.gameOver == true) { 
+        rb2d.velocity = Vector2.zero;
+        anim.SetTrigger("player_hurt");
+        }
     }
 
     public void isDeadTrue()
     {
-        isDead = true;
-        anim.SetTrigger("player_hurt");    
+         
     }
 
     private void OnCollisionEnter2D(Collision2D other)

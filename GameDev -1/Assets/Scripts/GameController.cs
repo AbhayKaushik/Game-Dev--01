@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class GameController : MonoBehaviour
     public float scrollSpeed = -500f;
     public GameObject GameOverText;
     public Animator anima;
+
+    public Text Scoretext;
+
+    private int score = 0;
 
     // Use this for intialization
     void Awake()
@@ -32,6 +37,8 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
+        //Score();
+
     }
 
     public void HeroDied()
@@ -39,6 +46,15 @@ public class GameController : MonoBehaviour
         GameOverText.SetActive(true);
         //GameController.instance.gameOver = true;
         anima.SetTrigger("player_hurt");
+    }
+
+    private void Score() {
+        if (GameController.instance.gameOver)
+        {
+            return;
+        }
+        score++;
+        Scoretext.text = "Score: " + score.ToString();
     }
 
 }
