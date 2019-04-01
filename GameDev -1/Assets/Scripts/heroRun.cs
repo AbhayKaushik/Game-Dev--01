@@ -45,7 +45,7 @@ public class heroRun : MonoBehaviour
         anim.SetTrigger("player_hurt");    
     }
 
-    private void OnCollisionEnter2D(Collision other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.name == "Frog")
         {
@@ -53,6 +53,11 @@ public class heroRun : MonoBehaviour
             GameController.instance.HeroDied(); 
             isDeadTrue();
         } 
+
+        else
+        {
+            print("Didn't collide");
+        }
     }
 
 }

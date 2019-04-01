@@ -2,22 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class eagle : MonoBehaviour
+public class frog : MonoBehaviour
 {
-    public GameObject Hero;
-    
-    //private Animator animtext;
-
-
-    //  private void OnTriggerEnter2D(Collider2D other)
-    //  {
-    //      if(other.GetComponent<heroRun>() != null)
-    //     {
-    //         print("AAAA");
-    //      }
-    //
-    //  }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -41,5 +27,4 @@ public class eagle : MonoBehaviour
         }
 
     }
-
 }
