@@ -6,10 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
-    public GameObject GameOverText;
     public bool gameOver = false;
     public float scrollSpeed = -500f;
-    public Animator anim;
+    public GameObject GameOverText;
 
     // Use this for intialization
     void Awake()
@@ -31,12 +30,13 @@ public class GameController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
     }
 
     public void HeroDied()
     {
         GameOverText.SetActive(true);
-        gameOver = true;
-        anim.SetTrigger("player_hurt");
+        GameController.instance.gameOver = true;
     }
+
 }

@@ -5,11 +5,14 @@ using UnityEngine;
 public class heroRun : MonoBehaviour
 {
     public float upForce = 200f;
-    public float runForce = 5f;
+    //public float runForce = 5f;
 
-    private bool isDead = false;
+    public bool isDead = false;
     private Rigidbody2D rb2d;
-    public Animator anim;
+    private Animator anim;
+    
+    public GameObject Eagle;
+    public GameObject Frog;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +35,24 @@ public class heroRun : MonoBehaviour
 
         }
 
-        rb2d.AddForce(new Vector2(runForce, 0));
+        //rb2d.AddForce(new Vector2(runForce, 0));
         anim.SetTrigger("player_run");
     }
+
+    public void isDeadTrue()
+    {
+        isDead = true;
+        anim.SetTrigger("player_hurt");    
+    }
+
+    private void OnCollisionEnter2D(Collision other)
+    {
+        if(other.gameObject.name == "Frog")
+        {
+            print("Its working");
+            GameController.instance.HeroDied(); 
+            isDeadTrue();
+        } 
+    }
+
 }

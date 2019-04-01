@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class eagle : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.GetComponent<heroRun>() != null)
-        {
-            print("AAAA");
-        }
+    public GameObject Hero;
+    
+    //private Animator animtext;
 
-    }
+
+    //  private void OnTriggerEnter2D(Collider2D other)
+    //  {
+    //      if(other.GetComponent<heroRun>() != null)
+    //     {
+    //         print("AAAA");
+    //      }
+    //
+    //  }
 
     // Start is called before the first frame update
     void Start()
@@ -24,4 +29,5 @@ public class eagle : MonoBehaviour
     {
         
     }
+
 }
